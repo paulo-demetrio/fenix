@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenix loja</title>
+    <style>
+        /* CSS básico */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #ff5722;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.8em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        /* Grid para exibir 2 produtos por linha */
+        .produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 2 produtos por linha em telas maiores */
+            gap: 20px;
+            justify-items: center;
+        }
+        .produto {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+        }
+        .produto img {
+            width: 100%;
+            height: auto;
+        }
+        .botao-comprar {
+            background-color: #ff5722;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .botao-comprar:hover {
+            background-color: #e64a19;
+        }
+        #carrinho {
+            margin-top: 20px;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+        }
+        /* Estilo do Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+        }
+        .botao-fechar, .botao-copiar {
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .botao-fechar:hover, .botao-copiar:hover {
+            background-color: #e64a19;
+        }
+        .botao-remover {
+            background-color: #d9534f;
+            color: white;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .botao-remover:hover {
+            background-color: #c9302c;
+        }
+
+
+
+        @keyframes colorimage {
+    0%{background-position-x: 0%;   }
+     100%{background-position-x: 100%;}
+
+
+}
+
+header{ background-image: linear-gradient(to right,
+    #ff4400de,#F6DF25,#f54a28e7,gold
+    );
+    background-size: 500% 100%;
+    padding-bottom: 7px;
+    animation: colorimage 2.8s  infinite alternate;}
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fenix</h1>
+    </header>
+
+    <main>
+        <div class="produtos">
+            <div class="produto">
+                <img src="imagem-produto1.jpg" alt="Produto 1">
+                <h3>Produto 1</h3>
+                <p>R$ 99,99</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Produto 1', 99.99)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="imagem-produto2.jpg" alt="Produto 2">
+                <h3>Produto 2</h3>
+                <p>R$ 149,99</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Produto 2', 149.99)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="imagem-produto3.jpg" alt="Produto 3">
+                <h3>Produto 3</h3>
+                <p>R$ 79,99</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Produto 3', 79.99)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="imagem-produto4.jpg" alt="Produto 4">
+                <h3>Produto 4</h3>
+                <p>R$ 89,99</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Produto 4', 89.99)">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="imagem-produto5.jpg" alt="Produto 5">
+                <h3>Produto 5</h3>
+                <p>R$ 149,99</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Produto 5', 149.99)">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="imagem-produto6.jpg" alt="Produto 6">
+                <h3>Produto 6</h3>
+                <p>R$ 149,99</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Produto 6', 149.99)">Comprar</button>
+            </div>
+
+        </div>
+
+
+
+
+        <div id="carrinho">
+            <h2>Carrinho de Compras</h2>
+            <ul id="lista-carrinho"></ul>
+            <button onclick="abrirModal()">Confirmar Compra</button>
+        </div>
+
+        
+    </main>
+
+    <!-- Modal de Confirmação -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Compra Confirmada!</h2>
+            <p>Sua chave Pix é:</p>
+            <p id="chave-pix"><strong>123e4567-e89b-12d3-a456-426614174000</strong></p>
+            <p>Total da Compra: R$ <span id="valor-total">0.00</span></p>
+            <button class="botao-copiar" onclick="copiarChavePix()">Copiar Chave Pix</button>
+            <button class="botao-fechar" onclick="fecharModal()">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        // Array para armazenar os itens do carrinho
+        let carrinho = [];
+
+        // Função para adicionar um produto ao carrinho
+        function adicionarAoCarrinho(nome, preco) {
+            carrinho.push({ nome, preco });
+            atualizarCarrinho();
+        }
+
+        // Função para remover um item do carrinho
+        function removerDoCarrinho(indice) {
+            carrinho.splice(indice, 1);
+            atualizarCarrinho();
+        }
+
+        // Função para atualizar a lista do carrinho na tela
+        function atualizarCarrinho() {
+            const listaCarrinho = document.getElementById('lista-carrinho');
+            listaCarrinho.innerHTML = ''; // Limpar a lista
+
+            carrinho.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+
+                // Botão para remover o item do carrinho
+                const botaoRemover = document.createElement('button');
+                botaoRemover.textContent = 'Remover';
+                botaoRemover.classList.add('botao-remover');
+                botaoRemover.onclick = () => removerDoCarrinho(index);
+
+                li.appendChild(botaoRemover);
+                listaCarrinho.appendChild(li);
+            });
+        }
+
+        // Função para abrir o modal
+        function abrirModal() {
+            if (carrinho.length > 0) {
+                const valorTotal = calcularValorTotal();
+                document.getElementById('valor-total').textContent = valorTotal.toFixed(2);
+                document.getElementById('modal').style.display = 'flex';
+            } else {
+                alert('Seu carrinho está vazio!');
+            }
+        }
+
+        // Função para fechar o modal
+        function fecharModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Função para calcular o valor total da compra
+        function calcularValorTotal() {
+            return carrinho.reduce((total, item) => total + item.preco, 0);
+        }
+
+        // Função para copiar a chave Pix
+        function copiarChavePix() {
+            const chavePix = document.getElementById('chave-pix').textContent;
+            navigator.clipboard.writeText(chavePix).then(() => {
+                alert('Chave Pix copiada para a área de transferência!');
+            }).catch(err => {
+                console.error('Erro ao copiar a chave Pix: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
