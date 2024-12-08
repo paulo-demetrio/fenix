@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fenix loja</title>
+    <link rel="stylesheet" href="auto.php">
     <style>
         /* CSS básico */
         body {
@@ -125,7 +126,11 @@ header{ background-image: linear-gradient(to right,
     animation: colorimage 2.8s  infinite alternate;}
 
 
-
+header>nav>span>p{display: inline;
+}
+header>nav>span>p>a{text-decoration: none;
+color: white;
+margin-left: 10px;}
 
 
 
@@ -136,40 +141,60 @@ header{ background-image: linear-gradient(to right,
 <body>
     <header>
         <h1>Fenix</h1>
+        <nav><span>
+            <p><a href="#dinos">Dinos</a></p>
+            <p><a href="#recursos">Recursos</a><p>
+            <p><a href="#ambar">Ambar</a></p>
+            <p><a href="#ark-types">ark-types</a></p>
+            <p><a href="#Estruturas">Estruturas</a></p>
+        </span></nav>
     </header>
 
     <main>
-        <div class="produtos">
+        <h2 id="dinos">Dinos</h2>
+        <div class="produtos" >
             <div class="produto">
                 <img src="imagem-produto1.jpg" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <p>R$ 99,99</p>
-                <button class="botao-comprar" onclick="adicionarAoCarrinho('Produto 1', 99.99)">Comprar</button>
+                <h3>There</h3>
+                <p>R$ 7,50</p>
+                <p>HP: 40k</p>
+                <p>PESO: 2-3k</p>
+                <p>MELE: 2-3.5k</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('There', 7.50)">Comprar</button>
             </div>
             <div class="produto">
                 <img src="imagem-produto2.jpg" alt="Produto 2">
-                <h3>Produto 2</h3>
-                <p>R$ 149,99</p>
-                <button class="botao-comprar" onclick="adicionarAoCarrinho('Produto 2', 149.99)">Comprar</button>
+                <h3>Bronto</h3>
+                <p>R$ 4,00</p>
+                <p>HP:200-400k</p>
+                <p>PESO:3-4k</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Bronto', 4.00)">Comprar</button>
             </div>
             <div class="produto">
                 <img src="imagem-produto3.jpg" alt="Produto 3">
-                <h3>Produto 3</h3>
-                <p>R$ 79,99</p>
-                <button class="botao-comprar" onclick="adicionarAoCarrinho('Produto 3', 79.99)">Comprar</button>
+                <h3>Quetzal</h3>
+                <p>R$ 7,50</p>
+                <P>HP:120k</P>
+                <P>PESO:2-4k</P>
+
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Quetzal 120k', 7.5)">Comprar</button>
             </div>
             <div class="produto">
                 <img src="imagem-produto4.jpg" alt="Produto 4">
-                <h3>Produto 4</h3>
-                <p>R$ 89,99</p>
-                <button class="botao-comprar" onclick="adicionarAoCarrinho('Produto 4', 89.99)">Comprar</button>
+                <h3>Quetzal</h3>
+                <p>R$ 14,00</p>
+                <p>HP:300k</p>
+                <p>6-9k</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Quetzal 300k', 14.00)">Comprar</button>
             </div>
 
             <div class="produto">
                 <img src="imagem-produto5.jpg" alt="Produto 5">
-                <h3>Produto 5</h3>
-                <p>R$ 149,99</p>
-                <button class="botao-comprar" onclick="adicionarAoCarrinho('Produto 5', 149.99)">Comprar</button>
+                <h3>Quetzal</h3>
+                <p>R$ 30,00</p>
+                <p>HP:600k</p>
+                <p>PESO:9-12k</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Quetzal 600k', 30.00)">Comprar</button>
             </div>
 
             <div class="produto">
@@ -179,11 +204,163 @@ header{ background-image: linear-gradient(to right,
                 <button class="botao-comprar" onclick="adicionarAoCarrinho('Produto 6', 149.99)">Comprar</button>
             </div>
 
+          
+
+        </div>
+
+        <h2 id="recursos">Recursos</h2>
+        <p><strong>maximo 5 recursos (exeto elemento e perola negra)</strong></p>
+
+        <div class="produtos" >
+            <div class="produto">
+                <img src="imagem-produto1.jpg" alt="Produto 1">
+                <h3>100k</h3>
+                
+                <p>R$ 5,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('100k rec', 5.00)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="imagem-produto2.jpg" alt="Produto 2">
+                <h3>300k</h3>
+                <p>15,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('300k rec', 15.00)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="imagem-produto3.jpg" alt="Produto 3">
+                <h3>600k</h3>
+                <p>R$ 20,00</p>
+
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('600k rec', 20.00)">Comprar</button>
+            </div>
+           
+
+          <div>
+
+        </div>
+        <h2 id="ambar">Ambar</h2>
+
         </div>
 
 
+        <div class="produtos" >
+            <div class="produto">
+                <img src="imagem-produto1.jpg" alt="Produto 1">
+                <h3>5k</h3>
+                <p>R$ 5,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('5k ambar', 5.00)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="imagem-produto2.jpg" alt="Produto 2">
+                <h3>10k</h3>
+                <p>R$ 7,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('10k ambar', 7.00)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="imagem-produto3.jpg" alt="Produto 3">
+                <h3>15k</h3>
+                <p>R$ 13,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('15k ambar', 13.00)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="imagem-produto4.jpg" alt="Produto 4">
+                <h3>20k</h3>
+                <p>R$ 18,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('20k ambar', 18.00)">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="imagem-produto5.jpg" alt="Produto 5">
+                <h3>40k</h3>
+                <p>R$ 30,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('40k ambar', 30.00)">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="imagem-produto6.jpg" alt="Produto 6">
+                <h3>80k</h3>
+                <p>R$ 60,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('80k ambar', 60.00)">Comprar</button>
+            </div>
 
 
+             <div></div>
+             <h2 id="ark-types">Ark-types craftados</h2>
+
+        </div>
+
+
+        <div class="produtos" >
+            <div class="produto">
+                <img src="imagem-produto1.jpg" alt="Produto 1">
+                <h3>10 pé de cabra</h3>
+                <p>R$ 3,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('pe de cabra', 3.00)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="imagem-produto2.jpg" alt="Produto 2">
+                <h3>10 asa de meganeura </h3>
+                <p>R$ 4,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('asa meganeura', 4.00)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="imagem-produto3.jpg" alt="Produto 3">
+                <h3>10 Panela</h3>
+                <p>R$ 3,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('panela', 3.00)">Comprar</button>
+            </div>
+
+
+<div></div>
+<h2 id="Estruturas">Estruturas</h2>
+
+        </div>
+
+
+        <div class="produtos" >
+            <div class="produto">
+                <img src="imagem-produto1.jpg" alt="Produto 1">
+                <h3>50 torreta eire</h3>
+                <p>R$ 5,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('50 torreta-eire', 5.00)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="imagem-produto2.jpg" alt="Produto 2">
+                <h3>Replicador </h3>
+                <p>R$ 2,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Replicador', 2.00)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="imagem-produto3.jpg" alt="Produto 3">
+                <h3>Gerador tek</h3>
+                <p>R$ 3,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Gera tek', 3.00)">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="imagem-produto3.jpg" alt="Produto 3">
+                <h3>Tek kibble</h3>
+                <p>R$ 2,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Tek kibble', 2.00)">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="imagem-produto3.jpg" alt="Produto 3">
+                <h3>Tek teleport</h3>
+                <p>R$ 2,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('Tek teleport', 2.00)">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="imagem-produto3.jpg" alt="Produto 3">
+                <h3>50 Planta-x</h3>
+                <p>R$ 5,00</p>
+                <button class="botao-comprar" onclick="adicionarAoCarrinho('50 planta-x', 5.00)">Comprar</button></div>
+<div></div>
+      
+
+
+          <div>
+    
         <div id="carrinho">
             <h2>Carrinho de Compras</h2>
             <ul id="lista-carrinho"></ul>
@@ -196,12 +373,16 @@ header{ background-image: linear-gradient(to right,
     <!-- Modal de Confirmação -->
     <div id="modal" class="modal">
         <div class="modal-content">
-            <h2>Compra Confirmada!</h2>
-            <p>Sua chave Pix é:</p>
-            <p id="chave-pix"><strong>123e4567-e89b-12d3-a456-426614174000</strong></p>
-            <p>Total da Compra: R$ <span id="valor-total">0.00</span></p>
-            <button class="botao-copiar" onclick="copiarChavePix()">Copiar Chave Pix</button>
-            <button class="botao-fechar" onclick="fecharModal()">Fechar</button>
+            <div class="modal-content">
+                <h2>Compra Confirmada!</h2>
+                <p>Faça o pagamento do Pix:</p>
+                <img id="qr-code-pix" src="processar_pagamento.php?valor=0.00" alt="QR Code Pix">
+                <p>Ou use a chave Pix:</p>
+                <p id="chave-pix"><strong>123e4567-e89b-12d3-a456-426614174000</strong></p>
+                <p>Total da Compra: R$ <span id="valor-total">0.00</span></p>
+                <button class="botao-copiar" onclick="copiarChavePix()">Copiar Chave Pix</button>
+                <button class="botao-fechar" onclick="fecharModal()">Fechar</button>
+            </div>
         </div>
     </div>
 
